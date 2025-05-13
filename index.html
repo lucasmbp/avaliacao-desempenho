@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Avaliação de Desempenho - Grupo Bottrel Agro</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #f7f9fc;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section-title {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+        .section-title:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 10%;
+            height: 80%;
+            width: 6px;
+            border-radius: 3px;
+        }
+        .forms-title:before {
+            background-color: #4f46e5;
+        }
+        .reports-title:before {
+            background-color: #10b981;
+        }
+        .card {
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            border-radius: 12px 12px 0 0;
+            padding: 12px 20px;
+        }
+        .forms .card-header {
+            background-color: rgba(79, 70, 229, 0.1);
+            color: #4f46e5;
+        }
+        .reports .card-header {
+            background-color: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+        }
+        .person-link {
+            transition: all 0.2s ease;
+            border-left: 4px solid transparent;
+        }
+        .person-link:hover {
+            background-color: #f3f4f6;
+            border-left-color: currentColor;
+        }
+        .forms .person-link:hover {
+            color: #4f46e5;
+        }
+        .reports .person-link:hover {
+            color: #10b981;
+        }
+        .dashboard-header {
+            background: linear-gradient(135deg, #4f46e5 0%, #10b981 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .area-label {
+            display: inline-flex;
+            align-items: center;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        .area-humaita {
+            background-color: rgba(244, 114, 182, 0.2);
+            color: #ec4899;
+        }
+        .area-sassafraz {
+            background-color: rgba(249, 115, 22, 0.2);
+            color: #f97316;
+        }
+        .instructions {
+            background-color: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        @media print {
+            body {
+                background-color: white;
+            }
+            .card {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto px-4 py-8">
+        <div class="dashboard-header text-center mb-10">
+            <h1 class="text-3xl font-bold mb-2">Dashboard de Avaliação de Desempenho</h1>
+            <h2 class="text-xl">Grupo Bottrel Agro</h2>
+        </div>
+
+        <div class="instructions mb-8">
+            <h3 class="font-bold text-lg mb-2"><i class="fas fa-info-circle mr-2"></i> Como usar este dashboard:</h3>
+            <p>Clique nos links abaixo para acessar os formulários de avaliação e relatórios de apuração organizados por área e função.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Coluna de Formulários -->
+            <div class="forms">
+                <h2 class="section-title forms-title text-2xl font-bold mb-6">
+                    <i class="fas fa-file-alt mr-2"></i> Formulários de Avaliação
+                </h2>
+
+                <!-- Administrativo -->
+                <div class="card bg-white mb-6">
+                    <div class="card-header flex items-center">
+                        <i class="fas fa-users-cog text-xl mr-3"></i>
+                        <h3 class="text-lg font-bold">Administrativo</h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfioDP9OfDfSOPjw84fAxpK94kli0u1Xbdzcv4pbxh3He72og/viewform?usp=header" class="person-link flex items-center p-3 mb-2 hover:bg-gray-50 rounded-lg" target="_blank">
+                            <i class="fas fa-user-edit mr-3"></i>
+                            <span>Giovanna Fazzion</span>
+                        </a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe-I5_mH6Fg1bau9vFDVaPwn4Asn6n7OOw6XfwfVjcurq_EWA/viewform?usp=header" class="person-link flex items-center p-3 mb-2 hover:bg-gray-50 rounded-lg" target="_blank">
+                            <i class="fas fa-user-edit mr-3"></i>
+                            <span>Viviane Bernardi</span>
+                        </a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeMj7lzJ-nR-8R_-duMcEBFIJXYbQ4GAVLIFlfpZCXOcMjuZQ/viewform?usp=header" class="person-link flex items-center p-3 hover:bg-gray-50 rounded-lg" target="_blank">
+                            <i class="fas fa-user-edit mr-3"></i>
+                            <span>Vera Becate</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Gestores -->
+                <div class="card bg-white mb-6">
+                    <div class="card-header flex items-center">
+                        <i class="fas fa-user-tie text-xl mr-3"></i>
+                        <h3 class="text-lg font-bold">Gestores</h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc5J3fiocbHiycOHcr62p7h6maE0A8rRwHiRhFyOD6XHIMT0w/viewform?usp=header" class="person-link flex items-center p-3 mb-2 hover:bg-gray-50 rounded-lg" target="_blank">
+                            <i class="fas fa-user-tie mr-3"></i>
+                            <span>Elias Bottrel</span>
+                        </a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeANqkt_wRr4gtnBQxQ_ka66uJTjlnZsjsd3wi11KgS9XaA5g/viewform?usp=header" class="person-link flex items-center p-3 hover:bg-gray-50 rounded-lg" target="_blank">
+                            <i class="fas fa-user-tie mr-3"></i>
+                            <span>Filipe Bottrel</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tratoristas Humaitá -->
+                <div class="card bg-white mb-6">
+                    <div class="card-header flex items-center">
+                        <i class="fas fa-tractor text-xl mr-3"></i>
+                        <h3 class="text-lg font-bold flex items-center">
+                            Tratoristas 
+                            <span class="area-label area-humaita ml-2">
+                                <i class="fas fa-map-marker-alt mr-1"></i> Humaitá
+                            </span>
+                        </h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScdoq5g1hurPI2y8HmH34JWFt_ghwcIBT76ecIn08QLB1EqCQ/viewform?usp=header" class="person-link flex items-center p-3 mb-2 hover:bg-gray-50 rounded-lg" target="_blank">
+                            <i class="fas fa-user mr-3"></i>
+                            <span>Adailton</span>
+                        </a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSefN4wFyTY5rP0nDkQrIojk3H7AzYBr8W-pIw0vNf6ry_whdA/viewform?usp=header" class="person-link flex items-center p-3 mb-2 hover:bg-gray-50 rounded-lg" target="_blank">
+                            <i class="fas fa-user mr-3"></i>
+                            <span>Maria</span>
+                        </a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe_0ovzklJSETeuRkYjxwjP1N_5H2Kwcmf7D3JsMtRqHcYLnA/viewform?usp=header" class="person-link flex items-center p-3 mb-2 hover:bg-gray-50 rounded-lg" target="_blank">
+                            <i class="fas fa-user mr-3"></i>
+                            <span>Natalino</span>
+                        </a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScav6huW4qcWshy_V11aP5rrbRmucWhX813qig2hLnahRRAmw/viewform?usp=header" class="person-link flex items-center p-3 hover:bg-gray-50 rounded-lg" target="_blank">
+                            <i class="fas fa-user mr-3"></i>
+                            <span>Senil</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tratoristas Sassafráz -->
+                <div class="card bg-white mb-6">
+                    <div class="card-header flex items-center">
+                        <i class="fas fa-tractor text-xl mr-3"></i>
+                        <h3 class="text-lg font-bold flex items-center">
+                            Tratoristas 
+                            <span class="area-label area-sassafraz ml-2">
+                                <i class="fas fa-map-marker-alt mr-1"></i> Sassafráz
+                            </span>
+                        </h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScBRjO43C4mia4StQ4NBNALgnIJQtdbfWfnDMOMFfksm7aXGQ/viewform?usp=header" class="person-link flex items-center p-3 mb-2 hover:bg-gray-50 rounded-lg" target="_blank">
+                            <i class="fas fa-user mr-3"></i>
+                            <span>Márcio</span>
+                        </a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd9UZKs_5NBq8rSo7HAT472y4-JEQ9vKGTj_AdtpYy3o0HjQA/viewform?usp=header" class="person-link flex items-center p-3 hover:bg-gray-50 rounded-lg" target="_blank">
+                            <i class="fas fa-user mr-3"></i>
+                            <span>Reginaldo</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna de Apurações -->
+            <div class="reports">
+                <h2 class="section-title reports-title text-2xl font-bold mb-6">
+                    <i class="fas fa-chart-bar mr-2"></i> Apurações
+                </h2>
+                
+                <!-- Administrativo -->
+                <div class="card bg-white mb-6">
+                    <div class="card-header flex items-center">
+                        <i class="fas fa-users-cog text-xl mr-3"></i>
+                        <h3 class="text-lg font-bold">Administrativo</h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv0HeufSAk-cNzVLmBZPuN_9PVaW3BVXoTJ7HN4RIGqPJR3sqYIhEs7cx8OQoJkypl1dcLzYCO19UX/pubhtml?gid=1017825695&single=true" class="person-link flex items-center p-3 mb-2 hover:bg-gray-50 rounded-lg" target="_blank">
+                            <i class="fas fa-file-excel mr-3"></i>
+                            <span>Giovanna Fazzion</span>
+                        </a>
+                        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTww13OV3HfqVgEP5OiVoy5QRJPaPLOCGIoh0H3Ky8Bx1OJrS_XwCC-K0F_P7Hnk9ncuz1R2PfWJWUO/pubhtml?gid=893442232&single=true" class="person-link flex items-center p-3 mb-2 hover:bg-gray-50 rounded-lg" target="_blank">
+                            <i class="fas fa-file-excel mr-3"></i>
+                            <span>Viviane Bernardi</span>
+                        </a>
+                        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRcrsMRGQtgUQdE0dMMzE2pDwpq6sN2i8TH7BFsYb4TljLxlJOzXassZivBQ9ZXvxBY_cT52oQQt6LR/pubhtml?gid=973552592&single=true" class="person-link flex items-center p-3 hover:bg-gray-50 rounded-lg" target="_blank">
+                            <i class="fas fa-file-excel mr-3"></i>
+                            <span>Vera Becate</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Gestores -->
+                <div class="card bg-white mb-6">
+                    <div class="card-header flex items-center">
+                        <i class="fas fa-user-tie text-xl mr-3"></i>
+                        <h3 class="text-lg font-bold">Gestores</h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQe7mD-gDwGVmCoL7EivyBNsVg8WMlwgRNYq7lDrYSIkMLnmcG2pQxTCCAypCdasum951rrPfpx02ts/pubhtml?gid=755703338&single=true" class="person-link flex items-center p-3 mb-2 hover:bg-gray-50 rounded-lg" target="_blank">
+                            <i class="fas fa-file-excel mr-3"></i>
+                            <span>Elias Bottrel</span>
+                        </a>
+                        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTEve1fiuswvsp_Qj5DdCoNrjPC5Z6A4xJ4qNooVWDEZhZBXuAzbvU6Cdc5clgI93iipHhPD-fUW5uB/pubhtml?gid=359444337&single=true" class="person-link flex items-center p-3 hover:bg-gray-50 rounded-lg" target="_blank">
+                            <i class="fas fa-file-excel mr-3"></i>
+                            <span>Filipe Bottrel</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tratoristas Humaitá -->
+                <div class="card bg-white mb-6">
+                    <div class="card-header flex items-center">
+                        <i class="fas fa-tractor text-xl mr-3"></i>
+                        <h3 class="text-lg font-bold flex items-center">
+                            Tratoristas 
+                            <span class="area-label area-humaita ml-2">
+                                <i class="fas fa-map-marker-alt mr-1"></i> Humaitá
+                            </span>
+                        </h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQiKkyWVA1jhUdqz-KfZSjP-ipVzXwcqnOvmT3NY-qCYgrBPetFiThv75UQ5ZsmIs8OiVxA8WW6uC5t/pubhtml?gid=1290169747&single=true" class="person-link flex items-center p-3 mb-2 hover:bg-gray-50 rounded-lg" target="_blank">
+                            <i class="fas fa-file-excel mr-3"></i>
+                            <span>Adailton</span>
+                        </a>
+                        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQz3VUxdyUI9CdIZznjIpFmuEmJzUmaF_LR-bKbS7Si7s3j08VJ2CNPnhiDNiyn-hybr03fwKULhKXi/pubhtml?gid=231974289&single=true" class="person-link flex items-center p-3 mb-2 hover:bg-gray-50 rounded-lg" target="_blank">
+                            <i class="fas fa-file-excel mr-3"></i>
+                            <span>Maria</span>
+                        </a>
+                        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCfM6ucMmZ8z94MFNG9G5JmDb-ggyVXm5f70_c_Sp4KWmm8pBXlSSPg0juRmMd9x9UecczStFmgH_S/pubhtml?gid=541381269&single=true" class="person-link flex items-center p-3 mb-2 hover:bg-gray-50 rounded-lg" target="_blank">
+                            <i class="fas fa-file-excel mr-3"></i>
+                            <span>Natalino</span>
+                        </a>
+                        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSeKeoOjb_-s_hQyG7UJ7dilpT0BfxgRKHGNIPsuJXRfM8M4GXTkmCKhCc13h4qSBiGP4TlBIJCjhKf/pubhtml?gid=162355208&single=true" class="person-link flex items-center p-3 mb-2 hover:bg-gray-50 rounded-lg" target="_blank">
+                            <i class="fas fa-file-excel mr-3"></i>
+                            <span>Senil</span>
+                        </a>
+                        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vT0CkH-3fSN-_RVULRRuEmV0k-hlhUp0zlB_jD-6kHE0oX3C0KjB8cdawLxdK6C2bY8Bui2yuiOxu22/pubhtml?gid=239363561&single=true" class="person-link flex items-center p-3 mb-2 hover:bg-gray-50 rounded-lg" target="_blank">
+                            <i class="fas fa-file-excel mr-3"></i>
+                            <span>Ezequiel</span>
+                        </a>
+                        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSnR8u-x-WIygU10AStHCj6KbvQnQ8vhWkta8Xl5GHlHw5F6IaXG76gYblpRSmXvZJnhEFGVdiOdvct/pubhtml?gid=873474227&single=true" class="person-link flex items-center p-3 hover:bg-gray-50 rounded-lg" target="_blank">
+                            <i class="fas fa-file-excel mr-3"></i>
+                            <span>Eberton</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tratoristas Sassafráz -->
+                <div class="card bg-white mb-6">
+                    <div class="card-header flex items-center">
+                        <i class="fas fa-tractor text-xl mr-3"></i>
+                        <h3 class="text-lg font-bold flex items-center">
+                            Tratoristas 
+                            <span class="area-label area-sassafraz ml-2">
+                                <i class="fas fa-map-marker-alt mr-1"></i> Sassafráz
+                            </span>
+                        </h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSMmt01ma7QkhfU_VwBLz9que81YIwNjGGZElYaCTNB83mEAHtW06NDRgfYbawUllHQjOkSek_YDOfi/pubhtml?gid=667617692&single=true" class="person-link flex items-center p-3 mb-2 hover:bg-gray-50 rounded-lg" target="_blank">
+                            <i class="fas fa-file-excel mr-3"></i>
+                            <span>Márcio</span>
+                        </a>
+                        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwX0womPOkmYimtekqy6Ckr9lh9w17dRGUv5lDzEWwYmzotV1gp6TI8OzqoUVTUo9wFElBtPcqFGY5/pubhtml?gid=598512751&single=true" class="person-link flex items-center p-3 hover:bg-gray-50 rounded-lg" target="_blank">
+                            <i class="fas fa-file-excel mr-3"></i>
+                            <span>Reginaldo</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-10 text-center text-gray-500 text-sm">
+            <p>Dashboard de Avaliação de Desempenho - Grupo Bottrel Agro</p>
+        </footer>
+    </div>
+</body>
+</html>
